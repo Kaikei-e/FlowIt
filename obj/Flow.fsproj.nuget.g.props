@@ -12,8 +12,12 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="/Users/duhuigao/.nuget/packages/" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore/8.0.0-preview.4.23259.3/buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore/8.0.0-preview.4.23259.3/buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props')" />
+  </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMySql_Data Condition=" '$(PkgMySql_Data)' == '' ">/Users/duhuigao/.nuget/packages/mysql.data/8.0.33</PkgMySql_Data>
+    <PkgMicrosoft_EntityFrameworkCore Condition=" '$(PkgMicrosoft_EntityFrameworkCore)' == '' ">/Users/duhuigao/.nuget/packages/microsoft.entityframeworkcore/8.0.0-preview.4.23259.3</PkgMicrosoft_EntityFrameworkCore>
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">/Users/duhuigao/.nuget/packages/fsharp.core/7.0.300</PkgFSharp_Core>
     <PkgDapper Condition=" '$(PkgDapper)' == '' ">/Users/duhuigao/.nuget/packages/dapper/2.0.123</PkgDapper>
     <PkgDapper_FSharp Condition=" '$(PkgDapper_FSharp)' == '' ">/Users/duhuigao/.nuget/packages/dapper.fsharp/4.5.1</PkgDapper_FSharp>

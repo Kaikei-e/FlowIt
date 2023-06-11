@@ -1,11 +1,11 @@
-module Flow.Repository.DbFactory
+namespace Flow.Repository
 
-open System
-open MySql.Data.MySqlClient
+open Microsoft.EntityFrameworkCore.Infrastructure
 
-type public EstablishConnection() =
-    static member Start() =
-        let connectionString = "Server=localhost;Database=flow;Uid=root;Pwd=;"
-        let connection = new MySqlConnection(connectionString)
-        connection.Open()
-        connection
+// type DbFactory(options: ) =
+//     static member Start() =
+//         let options = DbContextOptionsBuilder<FlowContext>()
+//             .UseMySql("Server=localhost;Database=flow;Uid=root;Pwd=;")
+//             .Options
+//         new FlowContext(options)
+

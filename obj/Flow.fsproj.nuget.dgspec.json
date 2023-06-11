@@ -51,6 +51,11 @@
               "version": "[7.0.300, )",
               "generatePathProperty": true
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0-preview.4.23259.3, )",
+              "generatePathProperty": true
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.33, )",
