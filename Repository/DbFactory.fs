@@ -1,11 +1,14 @@
 namespace Flow.Repository
 
-open Microsoft.EntityFrameworkCore.Infrastructure
+open MySql.Data.MySqlClient
 
-// type DbFactory(options: ) =
-//     static member Start() =
-//         let options = DbContextOptionsBuilder<FlowContext>()
-//             .UseMySql("Server=localhost;Database=flow;Uid=root;Pwd=;")
-//             .Options
-//         new FlowContext(options)
-
+module DbFactory =
+    type public EstablishConnection() =
+        static member Pool =
+             let credential = "Server=localhost;Database=flow;Uid=root;Pwd=;"
+             let connection = new MySqlConnection(credential)
+             let isAlive = connection.Ping()
+             if not isAlive then
+                 failwith "Connection to database failed"
+             connection
+             

@@ -5,6 +5,7 @@ open System.Collections.Generic
 open System.IO
 open System.Linq
 open System.Threading.Tasks
+open Flow.Repository
 open Microsoft.AspNetCore
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
@@ -13,16 +14,18 @@ open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Hosting
 open Microsoft.Extensions.Logging
-open Flow
+open Flow.Repository.DbFactory
 
 module Program =
     let exitCode = 0
 
     [<EntryPoint>]
     let main args =
+        use db = EstablishConnection.Pool
+        db.Open()
+        
         
         let builder = WebApplication.CreateBuilder(args)
-
         builder.Services.AddControllers()
 
         let app = builder.Build()

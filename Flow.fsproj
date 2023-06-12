@@ -7,8 +7,8 @@
     <ItemGroup>
         <Compile Include="WeatherForecast.fs" />
         <Compile Include="Controllers/WeatherForecastController.fs" />
+        <Compile Include="Repository/*.fs" />
         <Compile Include="Program.fs" />
-        <Compile Include="Repository/DbFactory.fs" />
     </ItemGroup>
     
     <ItemGroup>
